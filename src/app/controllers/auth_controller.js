@@ -1,7 +1,7 @@
 const express = require("express");
-const User = require("../models/user");
+const User = require("../../models/user");
 const bcrypt = require("bcryptjs");
-const tokenGenerator = require("../services/token_generator");
+const tokenGenerator = require("./token_generator");
 
 const router = express.Router();
 
