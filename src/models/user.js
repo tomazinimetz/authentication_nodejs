@@ -1,4 +1,5 @@
 const database = require("../database");
+const bcrypt = require("bcryptjs");
 
 const UserSchema = new database.Schema({
   name: {
@@ -21,5 +22,11 @@ const UserSchema = new database.Schema({
   },
 });
 
+UserSchema.pre("save", async function (next) {
+  const hash = await bcrypt.hash(this.password, 10);
+  this.password = hash;
+  next();
+});
+
 const User = database.model("User", UserSchema);
-module.exports = User; 
+module.exports = User;
