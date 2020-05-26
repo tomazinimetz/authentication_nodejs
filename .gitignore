@@ -1,5 +1,2 @@
-#Dependency
 node_modules/
-
-#Config
 auth_config.json
