@@ -1,6 +1,7 @@
 const express = require("express");
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
+const tokenGenerator = require("../services/token_generator");
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ router.post("/", async (req, res) => {
 
     user.password = undefined;
 
-    return res.send(user);
+    return res.send({ user, token: tokenGenerator({ id: user.id }) });
   } catch (err) {
     return res.status(400).send({ error: "Authentication error" });
   }
