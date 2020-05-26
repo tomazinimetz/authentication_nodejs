@@ -7,5 +7,4 @@ mongoose.connect("mongodb://localhost/restnode", {
 });
 
 mongoose.Promise = global.Promise;
-
 module.exports = mongoose;
