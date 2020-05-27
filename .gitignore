@@ -1,2 +1,2 @@
 node_modules/
-src/config/auth_config.json
+./src/config/auth_config.json
