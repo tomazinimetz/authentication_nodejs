@@ -1,2 +1,4 @@
+#Dependencies
 node_modules/
-./src/config/auth_config.json
+#Config 
+config/
